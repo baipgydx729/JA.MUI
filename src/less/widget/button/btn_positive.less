@@ -1,0 +1,17 @@
+@import "../../base/fn";
+
+.btn-positive {
+    color: #fff;
+    border: 0;
+    background-color: @btnPositiveBg;
+    &:not(.btn-disabled):visited {
+        color: @btnFontColor;
+    }
+    &:not(.btn-disabled):active {
+        color: @btnActiveFontColor;
+        background-color: @btnPositiveActiveBg;
+    }
+    &:after {
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+}

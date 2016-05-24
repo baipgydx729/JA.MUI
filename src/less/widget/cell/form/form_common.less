@@ -1,0 +1,71 @@
+@import "../../../base/fn";
+
+.label{
+    display:block;
+    width:@cellLabelWidth;
+    .text_wrap();
+}
+.input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: unit(@cellLineHeight, em);
+    line-height: @cellLineHeight;
+
+    // hides the spin-button
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+.textarea {
+    display: block;
+    border: 0;
+    resize: none;
+    width: 100%;
+    color: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    outline: 0;
+}
+
+.textarea-counter{
+    color: @globalDescColor;
+    text-align: right;
+    .cell-warn &{
+        color: @globalWarnColor;
+    }
+}
+
+.toptips {
+    display:none;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    width: 100%;
+    top: 0;
+    line-height: 2.3;
+    font-size:14px;
+    text-align: center;
+    color: #FFF;
+    z-index: 2;
+    &.warn {
+        background-color: @globalWarnColor;
+    }
+}
+.cells-form {
+    .cell-warn{
+        color:@globalWarnColor;
+        .icon-warn{display:inline-block;}
+    }
+    .cell-ft{font-size:0;}
+    .icon-warn{
+        display:none;
+    }
+    input, textarea, label[for]{
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}

@@ -1,0 +1,95 @@
+@import "../../base/fn";
+
+@lineColor: #E5E5E5;
+@grayColor: #999999;
+
+.media-box {
+    padding: 15px;
+    position: relative;
+    &:before {
+        .setTopLine(@lineColor);
+        left: 15px;
+    }
+    &:first-child {
+        &:before {
+            display: none
+        }
+    }
+
+    a&{
+        color:#000000;
+        .setTapColor;
+        &:active{
+            background-color:#ECECEC;
+        }
+    }
+
+    .media-title {
+        font-weight: 400;
+        font-size: 17px;
+        .ellipsis();
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .media-desc {
+        color: @grayColor;
+        font-size: 13px;
+        line-height: 1.2;
+        .ellipsisLn(2);
+    }
+
+    &.media-text {
+        .media-title {
+            margin-bottom: 8px;
+        }
+        .media-info {
+            margin-top: 15px;
+            padding-bottom: 5px;
+            font-size: 13px;
+            color: #CECECE;
+            line-height: 1em;
+            list-style: none;
+            overflow: hidden;
+        }
+        .media-info-meta {
+            float: left;
+            padding-right: 1em;
+            &.media-info-meta-extra {
+                padding-left: 1em;
+                border-left: 1px solid #CECECE;
+            }
+        }
+
+    }
+    &.media-appmsg {
+        display: flex;
+        align-items: center;
+        .media-hd {
+            margin-right: .8em;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+        .media-appmsg-thumb {
+            width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+        .media-bd {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+    &.media-small-appmsg {
+        padding: 0;
+        .cells {
+            margin-top: 0;
+            &:before {
+                display: none;
+            }
+        }
+        .cells_access {
+        }
+    }
+}

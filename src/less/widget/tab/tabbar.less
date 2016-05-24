@@ -1,0 +1,48 @@
+@import "../../base/fn";
+
+.tabbar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f7f7fa;
+
+    &:before {
+        .setTopLine(#979797);
+    }
+}
+
+.tabbar-item {
+    display: block;
+    flex: 1;
+    padding: 7px 0 0;
+    -webkit-tap-highlight-color: transparent;
+
+    &.active {
+        .tabbar-label {
+            color: @globalDefaultColor;
+        }
+    }
+}
+
+.tabbar-icon {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    & + .tabbar-label {
+        margin-top: 5px;
+    }
+}
+
+.tabbar-label {
+    text-align: center;
+    color: @globalTextColor;
+    font-size: 12px;
+}

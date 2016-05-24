@@ -1,0 +1,24 @@
+@import "../../base/fn";
+
+.progress {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    background-color: @progressBg;
+    height: @progressHeight;
+    flex: 1;
+}
+
+.progress-inner-bar {
+    width: 0;
+    height: 100%;
+    background-color: @progressColor;
+}
+
+.progress-opr {
+    display: block;
+    margin-left: 15px;
+    font-size: 0;
+}

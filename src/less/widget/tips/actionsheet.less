@@ -1,0 +1,76 @@
+@import "../../base/fn";
+@bgColor:#ECECEC;
+
+.actionsheet {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    transform: translate(0, 100%);
+    backface-visibility: hidden;
+    z-index: 2;
+    width: 100%;
+    background-color: @pageDefaultBackgroundColor;
+    //slide up animation
+    transition: transform .3s;
+}
+
+.actionsheet-menu{ }
+
+.actionsheet-action {
+    margin-top: 6px;
+}
+
+.actionsheet-cell {
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    &:before {
+        .setTopLine(@cellBorderColor);
+    }
+    &:active{
+        background-color: @bgColor;
+    }
+    &:first-child{
+        &:before{
+            display: none;
+        }
+    }
+}
+
+.actionsheet-lable{
+    padding: 5px 0;
+    font-size: 1rem;
+    color: #8a8a8a;
+    &:active{
+        background-color:#fff;
+    }
+}
+
+//actionSheet aniamtion
+.actionsheet-toggle{
+    transform: translate(0, 0);
+}
+
+.actionsheet-round {
+    background-color: transparent;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+
+    .actionsheet-menu{
+
+        .actionsheet-cell{
+            &:first-child {
+                border-radius: 0.25rem 0.25rem 0 0;
+            }
+            &:last-child {
+                border-radius:  0 0 0.25rem 0.25rem;
+            }
+        }
+    }
+
+}
+

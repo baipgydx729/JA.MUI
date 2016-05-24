@@ -1,0 +1,48 @@
+@import "../../base/fn";
+
+.btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: @btnFontSize;
+    text-align: center;
+    text-decoration: none;
+    color: @btnFontColor;
+    line-height: unit(@btnHeight/@btnFontSize);
+    border-radius: @btnBorderRadius;
+    .setTapColor();
+    overflow: hidden;
+    color: @btnPrimaryBg;
+    border: 1px solid @btnPrimaryBg;
+
+    &:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(.5);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: @btnBorderRadius*2;
+    }
+
+
+    &.btn-inline {
+        display: inline-block;
+    }
+
+    &:not(.btn-disabled):visited {
+        color: #CCC;
+    }
+    &:not(.btn-disabled):active {
+        color: @btnDefaultActiveFontColor;
+        background-color: @btnDefaultActiveBg;
+    }
+
+}

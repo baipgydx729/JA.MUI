@@ -1,0 +1,18 @@
+@import "../../base/fn";
+
+.btn-warn {
+    color: #fff;
+    border: 0;
+    background-color: @btnWarnBg;
+    &:not(.btn-disabled):visited {
+        color: @btnFontColor;
+    }
+    &:not(.btn-disabled):active {
+        color: @btnActiveFontColor;
+        background-color: @btnWarnActiveBg;
+    }
+
+    &:after {
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+}

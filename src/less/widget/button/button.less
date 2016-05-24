@@ -1,0 +1,109 @@
+@import "../../base/fn";
+// 存在样式优先级的问题，故这里对其他btn的引用放在底部
+// 主要是button.btn在plain下重写border-width
+
+.btn {
+    &.btn-mini {
+        line-height: @btnMiniHeight;
+        font-size: @btnMiniFontSize;
+        padding: 0 .75em;
+        display: inline-block;
+    }
+    &.btn-sm {
+        font-size: @btnMiniFontSize;
+    }
+
+    &.btn-round {
+        border-radius: 40px;
+        &:after{
+            border-radius: 40px;
+        }
+    }
+
+}
+
+button, input {
+    &.btn {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.inline,&.mini {
+        width: auto;
+    }
+}
+
+/*gap between btn*/
+.btn + .btn {
+    margin-top: @btnDefaultGap;
+}
+
+.btn.inline + .btn.inline {
+    margin-top: auto;
+    margin-left: @btnDefaultGap;
+}
+
+.btn-area {
+    margin: @cellsMarginTop @btnDefaultGap .3em;
+    &.btn-area-inline {
+        display: flex;
+        .btn {
+            margin-top: auto;
+            margin-right: @btnDefaultGap;
+            width: 100%;
+            flex: 1;
+            -webkit-box-flex: 1;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.btn-row {
+    display: flex;
+    .btn {
+        margin-top: 0;
+        width: 100%;
+        flex: 1;
+        margin-left: -1px;
+        border-radius: 0 0 0 0;
+        -webkit-box-flex: 1;
+        &:first-child {
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+        &:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+
+        &.active{
+            color: @btnFontColor;
+            background-color: @btnPrimaryBg;
+            &:not(.btn-disabled):active {
+                color: @btnActiveFontColor;
+                background-color: @btnPrimaryActiveBg;
+            }
+        }
+
+        &.btn-round{
+            border-radius: 0;
+            &:first-child {
+                border-radius: 40px 0 0 40px;
+            }
+            &:last-child {
+                border-radius: 0 40px 40px 0;
+            }
+        }
+    }
+}
+
+@import "btn_global";
+@import "btn_default";
+@import "btn_primary";
+@import "btn_positive";
+@import "btn_warn";
+@import "btn_disabled";

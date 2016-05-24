@@ -1,0 +1,31 @@
+@import "../../../base/fn";
+@import "./select";
+
+.select-before {
+    padding-right:@cellGapH;
+    .select {
+        width:@cellLabelWidth;
+        box-sizing: border-box;
+    }
+    .cell-hd {
+        position:relative;
+        &:after {
+            .setRightLine(@cellBorderColor);
+        }
+        &:before{
+            content: " ";
+            .setArrow_Wap(right, 6px, #C8C8CD, 2px);
+
+            position: absolute;
+            top: 50%;
+            right: @cellGapH;
+            margin-top: -3px;
+        }
+    }
+    .cell-bd {
+        padding-left:@cellGapH;
+        &:after{
+            display:none;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "../../../base/fn";
+
+.cells-checkbox {
+    .cell-hd {
+        padding-right: @cellInnerGapH;
+    }
+    .cell {
+        &:active {
+            background-color: #ECECEC;
+        }
+    }
+    .icon-checked {
+        &:before {
+            content: '\EA01';
+            color: #C9C9C9;
+            font-size: 23px;
+            display: block;
+        }
+    }
+}
+
+// method2 accessbility
+.check {
+    // checkbox
+    .cells-checkbox & {
+        &:checked {
+            & + .icon-checked {
+                &:before {
+                    content: '\EA06';
+                    color: @globalDefaultColor;
+                }
+            }
+        }
+    }
+}
