@@ -10,13 +10,14 @@
         display: inline-block;
     }
     &.btn-sm {
-        font-size: @btnMiniFontSize;
+        font-size: @btnSmFontSize;
+        line-height:@btnSmHeight;
     }
 
     &.btn-round {
-        border-radius: 40px;
+        border-radius: 4rem;
         &:after{
-            border-radius: 40px;
+            border-radius: 4rem;
         }
     }
 
@@ -92,10 +93,10 @@ button, input {
         &.btn-round{
             border-radius: 0;
             &:first-child {
-                border-radius: 40px 0 0 40px;
+                border-radius: 4rem 0 0 4rem;
             }
             &:last-child {
-                border-radius: 0 40px 40px 0;
+                border-radius: 0 4rem 4rem 0;
             }
         }
     }

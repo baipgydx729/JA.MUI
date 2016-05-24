@@ -1,12 +1,38 @@
 @import "fn";
-
 html {
+    font-size: 16px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
+@media only screen and (max-width: 322px) {
+    html {
+        font-size: 12.5px !important;
+    }
+}
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 18px !important;
+    }
+}
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 19.08px !important;
+    }
+}
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 23.6px !important;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    html {
+        font-size: 26.06px !important;
+    }
+}
 
 body {
-    line-height: 1.6;
+    line-height: 1.6rem;
     font-family: @sansFont;
 }
 
